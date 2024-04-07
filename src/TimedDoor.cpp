@@ -19,6 +19,12 @@ void Timer::tregister(int timeout, TimerClient *adapter) {
   sleep(timeout);
 }
 
+void Timer::sleep(int timeout) {
+    for (int i = 0; i < timeout; i++) {
+        i--;
+    }
+}
+
 bool TimedDoor::isDoorOpened() {
   return isOpened;
 }
