@@ -31,8 +31,11 @@ int TimedDoor::getTimeOut() const {
 
 void TimedDoor::throwState() {
   if (isOpened) {
-    std::cout << "Door has been open for " << iTimeout << " seconds." << std::endl;
+    std::cout
+    << "Door has been open for "
+    << iTimeout << " seconds." << std::endl;
   } else {
-    std::cout << "Door has been closed for " << iTimeout << " seconds." << std::endl;
+    std::cout << "Door has been closed for "
+    << iTimeout << " seconds." << std::endl;
   }
 }
