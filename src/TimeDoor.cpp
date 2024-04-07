@@ -4,35 +4,35 @@
 DoorTimerAdapter::DoorTimerAdapter(TimedDoor& door) : door(door) {}
 
 void DoorTimerAdapter::Timeout() {
-    door.throwState();
+  door.throwState();
 }
 
 TimedDoor::TimedDoor(int timeout) : iTimeout(timeout), isOpened(false) {
-    adapter = new DoorTimerAdapter(*this);
-    Timer timer;
-    timer.tregister(timeout, adapter);
+  adapter = new DoorTimerAdapter(*this);
+  Timer timer;
+  timer.tregister(timeout, adapter);
 }
 
 bool TimedDoor::isDoorOpened() {
-    return isOpened;
+  return isOpened;
 }
 
 void TimedDoor::unlock() {
-    isOpened = true;
+  isOpened = true;
 }
 
 void TimedDoor::lock() {
-    isOpened = false;
+  isOpened = false;
 }
 
 int TimedDoor::getTimeOut() const {
-    return iTimeout;
+  return iTimeout;
 }
 
 void TimedDoor::throwState() {
-    if (isOpened) {
-        std::cout << "Door has been open for " << iTimeout << " seconds." << std::endl;
-    } else {
-        std::cout << "Door has been closed for " << iTimeout << " seconds." << std::endl;
-    }
+  if (isOpened) {
+    std::cout << "Door has been open for " << iTimeout << " seconds." << std::endl;
+  } else {
+    std::cout << "Door has been closed for " << iTimeout << " seconds." << std::endl;
+  }
 }
