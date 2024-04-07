@@ -14,7 +14,6 @@ TEST(TimedDoorTest, TestDoorOpen) {
   MockTimerClient mockTimer;
   TimedDoor timedDoor(timeout);
   timedDoor.unlock();
-
   EXPECT_CALL(mockTimer, Timeout()).Times(1);
   timedDoor.throwState();
 }
