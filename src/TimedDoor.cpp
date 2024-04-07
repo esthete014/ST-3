@@ -14,6 +14,11 @@ TimedDoor::TimedDoor(int timeout) : iTimeout(timeout), isOpened(false) {
   timer.tregister(timeout, adapter);
 }
 
+void Timer::tregister(int timeout, TimerClient *adapter) {
+  adapter->Timeout();
+  sleep(timeout);
+}
+
 bool TimedDoor::isDoorOpened() {
   return isOpened;
 }
