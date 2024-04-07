@@ -1,5 +1,6 @@
 // Copyright 2024 Kochetov Nikolay
 #include "TimedDoor.h"
+#include <iostream>
 
 DoorTimerAdapter::DoorTimerAdapter(TimedDoor& door) : door(door) {}
 
